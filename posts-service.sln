@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Articles", "src\Articles\Articles.csproj", "{5C90EFC7-8BA1-4BAE-BF4B-AD77F24ACC3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Articles", "src\api\Articles.csproj", "{5C90EFC7-8BA1-4BAE-BF4B-AD77F24ACC3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "src\Database\Database\Database.csproj", "{EC29E15D-077B-4814-8656-03EC17E91A62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "src\database\Database.csproj", "{EC29E15D-077B-4814-8656-03EC17E91A62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{CE8367F4-7E0E-4DF9-8048-B7C8426D18B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "src\entities\Entities.csproj", "{CE8367F4-7E0E-4DF9-8048-B7C8426D18B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
