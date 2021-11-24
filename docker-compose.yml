@@ -1,0 +1,28 @@
+version: '3.5'
+services:
+  seq:
+    container_name: tutorials_seq
+    image: datalust/seq:latest
+    ports:
+      - 80:80
+      - 5341:5341
+    environment:
+      ACCEPT_EULA: Y
+  postgres:
+    container_name: tutorials_postgre
+    image: postgres
+    env_file:
+      - .env
+     
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+networks:
+  postgres:
+    driver: bridge
+volumes:
+  postgres:
