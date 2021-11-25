@@ -30,12 +30,12 @@ namespace Database.Configuration
                 .IsRequired();
 
             builder.Property(x => x.Title)
-                .HasColumnType(ColumnTypes.NVarchar)
+                .HasColumnType(ColumnTypes.Varchar)
                 .HasMaxLength(75)
                 .IsRequired();
 
             builder.Property(x => x.Summary)
-                .HasColumnType(ColumnTypes.NVarchar)
+                .HasColumnType(ColumnTypes.Varchar)
                 .HasMaxLength(300)
                 .IsRequired();
             
@@ -44,7 +44,7 @@ namespace Database.Configuration
                 .IsRequired();
             
             builder.Property(x => x.Url)
-                .HasColumnType(ColumnTypes.NVarchar)
+                .HasColumnType(ColumnTypes.Varchar)
                 .HasMaxLength(286)
                 .IsRequired();
             

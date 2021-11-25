@@ -21,9 +21,6 @@
     <data name="UUID" xml:space="preserve">
         <value>uuid</value>
     </data>
-    <data name="NVarchar" xml:space="preserve">
-        <value>nvarchar</value>
-    </data>
     <data name="Varchar" xml:space="preserve">
         <value>varchar</value>
     </data>

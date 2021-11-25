@@ -51,12 +51,6 @@ namespace Database {
             }
         }
         
-        internal static string NVarchar {
-            get {
-                return ResourceManager.GetString("NVarchar", resourceCulture);
-            }
-        }
-        
         internal static string Varchar {
             get {
                 return ResourceManager.GetString("Varchar", resourceCulture);
