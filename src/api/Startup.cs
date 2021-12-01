@@ -1,14 +1,17 @@
 using Articles.Behaviours;
 using Articles.Middleware;
+using Database;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Serilog;
+
 
 namespace Articles
 {
@@ -31,6 +34,11 @@ namespace Articles
                 c.CustomSchemaIds(x => x.FullName);
                 c.EnableAnnotations();
             });
+
+            services.AddDbContext<ArticlesContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("articles"))
+            );
+            
             services.AddTransient<ExceptionHandlingMiddleware>();
             services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
             services.AddMediatR(typeof(Startup))
