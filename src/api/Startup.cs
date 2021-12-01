@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using Threenine.Data.DependencyInjection;
 
 
 namespace Articles
@@ -37,7 +38,7 @@ namespace Articles
 
             services.AddDbContext<ArticlesContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("articles"))
-            );
+            ).AddUnitOfWork<ArticlesContext>();
             
             services.AddTransient<ExceptionHandlingMiddleware>();
             services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
@@ -52,6 +53,13 @@ namespace Articles
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseSerilogRequestLogging();
+            
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<ArticlesContext>();
+                context?.Database.Migrate();
+            }
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
