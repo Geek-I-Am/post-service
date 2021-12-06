@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Articles.Resources;
+using PostService.Resources;
 
-namespace Articles.Exceptions
+namespace PostService.Exceptions
 {
     public class ValidationException : ArticlesException
     {

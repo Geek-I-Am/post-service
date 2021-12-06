@@ -1,6 +1,6 @@
 using System;
 
-namespace Articles.Exceptions
+namespace PostService.Exceptions
 {
     public class ArticlesException : Exception
     {

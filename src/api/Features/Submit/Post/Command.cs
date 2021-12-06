@@ -1,9 +1,9 @@
-using Articles.Features.Submit.Post.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using PostService.Features.Submit.Post.Models;
 using Threenine.ApiResponse;
 
-namespace Articles.Features.Submit.Post
+namespace PostService.Features.Submit.Post
 {
     public class Command : IRequest<SingleResponse<Response>>
     {

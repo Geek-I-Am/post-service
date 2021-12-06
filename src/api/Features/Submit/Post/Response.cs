@@ -1,4 +1,4 @@
-namespace Articles.Features.Submit.Post
+namespace PostService.Features.Submit.Post
 {
     public class Response
     {

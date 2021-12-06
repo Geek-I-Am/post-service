@@ -1,7 +1,7 @@
-using Articles.Features.Submit.Post.Models;
 using AutoMapper;
+using PostService.Features.Submit.Post.Models;
 
-namespace Articles.Features.Submit.Post
+namespace PostService.Features.Submit.Post
 {
     public class Mapping : Profile
     {

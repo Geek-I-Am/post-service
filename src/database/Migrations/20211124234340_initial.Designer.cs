@@ -23,7 +23,7 @@ namespace Database.Migrations
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-            modelBuilder.Entity("Entities.Articles", b =>
+            modelBuilder.Entity("Entities.PostService", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -62,7 +62,7 @@ namespace Database.Migrations
                         .IsUnique()
                         .UseCollation(new[] { "case_insensitive_collation" });
 
-                    b.ToTable("Articles");
+                    b.ToTable("PostService");
                 });
 #pragma warning restore 612, 618
         }

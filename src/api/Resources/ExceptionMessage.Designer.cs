@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Articles.Resources
+namespace PostService.Resources
 {
     using System;
 
@@ -35,7 +35,7 @@ namespace Articles.Resources
                 if (object.Equals(null, resourceMan))
                 {
                     System.Resources.ResourceManager temp =
-                        new System.Resources.ResourceManager("Articles.Resources.ExceptionMessage",
+                        new System.Resources.ResourceManager("PostService.Resources.ExceptionMessage",
                             typeof(ExceptionMessage).Assembly);
                     resourceMan = temp;
                 }

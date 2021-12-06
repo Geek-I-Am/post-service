@@ -1,5 +1,3 @@
-using Articles.Behaviours;
-using Articles.Middleware;
 using Database;
 using FluentValidation;
 using MediatR;
@@ -10,11 +8,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using PostService.Behaviours;
+using PostService.Middleware;
 using Serilog;
 using Threenine.Data.DependencyInjection;
 
 
-namespace Articles
+namespace PostService
 {
     public class Startup
     {
@@ -31,7 +31,7 @@ namespace Articles
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Articles", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PostService", Version = "v1" });
                 c.CustomSchemaIds(x => x.FullName);
                 c.EnableAnnotations();
             });
@@ -64,7 +64,7 @@ namespace Articles
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Articles v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PostService v1"));
             }
 
             app.UseMiddleware<ExceptionHandlingMiddleware>();

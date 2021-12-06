@@ -1,4 +1,4 @@
-namespace Articles.Features
+namespace PostService.Features
 {
     internal static class Routes
     {

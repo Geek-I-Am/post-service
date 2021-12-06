@@ -8,7 +8,7 @@ using MediatR;
 using Serilog;
 using Threenine.ApiResponse;
 
-namespace Articles.Behaviours
+namespace PostService.Behaviours
 {
     public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TResponse : class

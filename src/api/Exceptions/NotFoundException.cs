@@ -1,7 +1,7 @@
 using System;
-using Articles.Resources;
+using PostService.Resources;
 
-namespace Articles.Exceptions
+namespace PostService.Exceptions
 {
     [Serializable]
     public class NotFoundException : ArticlesException

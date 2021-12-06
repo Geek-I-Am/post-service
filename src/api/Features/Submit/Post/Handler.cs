@@ -5,7 +5,7 @@ using MediatR;
 using Threenine.ApiResponse;
 using Threenine.Data;
 
-namespace Articles.Features.Submit.Post
+namespace PostService.Features.Submit.Post
 {
     public class Handler : IRequestHandler<Command, SingleResponse<Response>>
     {

@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Articles.Exceptions;
 using Microsoft.AspNetCore.Http;
+using PostService.Exceptions;
 
-namespace Articles.Middleware
+namespace PostService.Middleware
 {
     internal class ExceptionHandlingMiddleware : IMiddleware
     {

@@ -10,6 +10,8 @@ namespace Entities
         public string Summary { get; set; }
         public DateTime Published { get; set; }
         public string Url { get; set; }
+        
+        public DateTime Created { get; set; }
 
        
     }

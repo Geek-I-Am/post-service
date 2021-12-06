@@ -12,7 +12,7 @@ namespace Database.Migrations
                 .Annotation("Npgsql:PostgresExtension:uuid-ossp", ",,");
 
             migrationBuilder.CreateTable(
-                name: "Articles",
+                name: "PostService",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "uuid_generate_v4()"),
@@ -29,13 +29,13 @@ namespace Database.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_Articles_Id",
-                table: "Articles",
+                table: "PostService",
                 column: "Id",
                 unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Articles_Url",
-                table: "Articles",
+                table: "PostService",
                 column: "Url",
                 unique: true)
                 .Annotation("Relational:Collation", new[] { "case_insensitive_collation" });
@@ -44,7 +44,7 @@ namespace Database.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Articles");
+                name: "PostService");
         }
     }
 }

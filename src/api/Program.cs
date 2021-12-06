@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
 
-namespace Articles
+namespace PostService
 {
     public class Program
     {
@@ -17,12 +17,12 @@ namespace Articles
                 .CreateBootstrapLogger();
             try
             {
-                Log.Information("Articles Application is starting");
+                Log.Information("PostService Application is starting");
                 CreateHostBuilder(args).Build().Run();
             }
             catch (Exception ex)
             {
-                Log.Fatal(ex, "Articles application failed to start");
+                Log.Fatal(ex, "PostService application failed to start");
             }
             finally
             {
