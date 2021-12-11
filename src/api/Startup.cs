@@ -1,5 +1,5 @@
-using Database;
 using FluentValidation;
+using Geek.Database;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,7 +12,6 @@ using PostService.Behaviours;
 using PostService.Middleware;
 using Serilog;
 using Threenine.Data.DependencyInjection;
-
 
 namespace PostService
 {
@@ -36,9 +35,9 @@ namespace PostService
                 c.EnableAnnotations();
             });
 
-            services.AddDbContext<ArticlesContext>(options =>
+            services.AddDbContext<GeekContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("articles"))
-            ).AddUnitOfWork<ArticlesContext>();
+            ).AddUnitOfWork<GeekContext>();
             
             services.AddTransient<ExceptionHandlingMiddleware>();
             services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
@@ -56,7 +55,7 @@ namespace PostService
             
             using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                var context = serviceScope.ServiceProvider.GetService<ArticlesContext>();
+                var context = serviceScope.ServiceProvider.GetService<GeekContext>();
                 context?.Database.Migrate();
             }
             

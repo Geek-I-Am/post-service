@@ -1,5 +1,7 @@
 using AutoMapper;
+using Geek.Database.Entities;
 using PostService.Features.Submit.Post.Models;
+
 
 namespace PostService.Features.Submit.Post
 {
@@ -8,7 +10,7 @@ namespace PostService.Features.Submit.Post
         public Mapping()
         {
 
-            CreateMap<PostBody, Entities.Articles>()
+            CreateMap<PostBody, Articles>()
                 .ForMember(dest => dest.Summary, opt => opt.MapFrom(src => src.Summary))
                 .ForMember(dest => dest.Url, opt => opt.MapFrom(src => src.Url))
                 .ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.Title))

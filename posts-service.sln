@@ -2,10 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostService", "src\api\PostService.csproj", "{5C90EFC7-8BA1-4BAE-BF4B-AD77F24ACC3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "src\database\Database.csproj", "{EC29E15D-077B-4814-8656-03EC17E91A62}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "src\entities\Entities.csproj", "{CE8367F4-7E0E-4DF9-8048-B7C8426D18B6}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DC95E8F7-EB3D-40D0-A969-FCE7696447AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api.tests", "tests\api.tests\api.tests.csproj", "{D68AA902-F1A7-4CB8-859A-24656411463F}"
@@ -20,14 +16,6 @@ Global
 		{5C90EFC7-8BA1-4BAE-BF4B-AD77F24ACC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C90EFC7-8BA1-4BAE-BF4B-AD77F24ACC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C90EFC7-8BA1-4BAE-BF4B-AD77F24ACC3D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EC29E15D-077B-4814-8656-03EC17E91A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC29E15D-077B-4814-8656-03EC17E91A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC29E15D-077B-4814-8656-03EC17E91A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC29E15D-077B-4814-8656-03EC17E91A62}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CE8367F4-7E0E-4DF9-8048-B7C8426D18B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE8367F4-7E0E-4DF9-8048-B7C8426D18B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE8367F4-7E0E-4DF9-8048-B7C8426D18B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE8367F4-7E0E-4DF9-8048-B7C8426D18B6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D68AA902-F1A7-4CB8-859A-24656411463F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D68AA902-F1A7-4CB8-859A-24656411463F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D68AA902-F1A7-4CB8-859A-24656411463F}.Release|Any CPU.ActiveCfg = Release|Any CPU

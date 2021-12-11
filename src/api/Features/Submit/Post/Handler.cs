@@ -1,9 +1,11 @@
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using Geek.Database.Entities;
 using MediatR;
 using Threenine.ApiResponse;
 using Threenine.Data;
+
 
 namespace PostService.Features.Submit.Post
 {
@@ -19,8 +21,8 @@ namespace PostService.Features.Submit.Post
         }
         public async Task<SingleResponse<Response>> Handle(Command request, CancellationToken cancellationToken)
         {
-            var article = _mapper.Map<Entities.Articles>(request.Article);
-            var repo = _unitOfWork.GetRepository<Entities.Articles>();
+            var article = _mapper.Map<Articles>(request.Article);
+            var repo = _unitOfWork.GetRepository<Articles>();
             repo.Insert(article);
             await _unitOfWork.CommitAsync();
 
