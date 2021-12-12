@@ -1,7 +1,7 @@
 using System;
 using FluentValidation;
 
-namespace PostService.Features.Submit.Post
+namespace GeekIAm.Features.Submit.Post
 {
     public class Validator : AbstractValidator<Command>
     {

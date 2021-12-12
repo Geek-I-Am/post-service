@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
 
-namespace PostService
+namespace GeekIAm
 {
     public class Program
     {
@@ -17,12 +17,12 @@ namespace PostService
                 .CreateBootstrapLogger();
             try
             {
-                Log.Information("PostService Application is starting");
+                Log.Information("Posts.Service Application is starting");
                 CreateHostBuilder(args).Build().Run();
             }
             catch (Exception ex)
             {
-                Log.Fatal(ex, "PostService application failed to start");
+                Log.Fatal(ex, "Posts.Service application failed to start");
             }
             finally
             {
@@ -30,7 +30,7 @@ namespace PostService
             }
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .UseSerilog((hostContext, LoggerConfiguration) =>
                 {

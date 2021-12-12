@@ -1,6 +1,6 @@
 using System;
 
-namespace PostService.Exceptions
+namespace GeekIAm.Exceptions
 {
     public class ArticlesException : Exception
     {

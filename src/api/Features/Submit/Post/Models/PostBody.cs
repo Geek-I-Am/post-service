@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace PostService.Features.Submit.Post.Models
+namespace GeekIAm.Features.Submit.Post.Models
 {
     public class PostBody
     {

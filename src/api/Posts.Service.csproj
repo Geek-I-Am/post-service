@@ -20,6 +20,8 @@
         <NoDefaultExcludes>true</NoDefaultExcludes>
         <PackageReleaseNotes>Added CustomSchemaIds to Swagger end point definitions. Mediator Logging and Validation Behaviour pipelines implemented</PackageReleaseNotes>
       <UserSecretsId>c9f90c78-2533-46c7-aa44-ef59b79a8591</UserSecretsId>
+      <AssemblyName>GeekIAm.Posts.Service</AssemblyName>
+      <RootNamespace>GeekIAm.Posts.Service</RootNamespace>
   </PropertyGroup>
     <ItemGroup>
         <Content Include="**\**" Exclude="**\bin\**;**\obj\**;**\.idea\**" />
@@ -32,8 +34,8 @@
         <PackageReference Include="FluentValidation" Version="10.3.3" />
         <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.3" />
         <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.3" />
-        <PackageReference Include="Geek.Database" Version="0.1.5" />
-        <PackageReference Include="Geek.Database.Entities" Version="0.1.5" />
+        <PackageReference Include="Geek.Database" Version="0.1.7" />
+        <PackageReference Include="Geek.Database.Entities" Version="0.1.7" />
         <PackageReference Include="MediatR" Version="9.0.0" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
         <PackageReference Include="Serilog" Version="2.10.0" />

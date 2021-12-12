@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostService", "src\api\PostService.csproj", "{5C90EFC7-8BA1-4BAE-BF4B-AD77F24ACC3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Posts.Service", "src\api\Posts.Service.csproj", "{5C90EFC7-8BA1-4BAE-BF4B-AD77F24ACC3D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DC95E8F7-EB3D-40D0-A969-FCE7696447AB}"
 EndProject

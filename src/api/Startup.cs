@@ -1,5 +1,7 @@
 using FluentValidation;
 using Geek.Database;
+using GeekIAm.Behaviours;
+using GeekIAm.Middleware;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,12 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using PostService.Behaviours;
-using PostService.Middleware;
 using Serilog;
 using Threenine.Data.DependencyInjection;
 
-namespace PostService
+namespace GeekIAm
 {
     public class Startup
     {
@@ -30,7 +30,7 @@ namespace PostService
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PostService", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Posts.Service", Version = "v1" });
                 c.CustomSchemaIds(x => x.FullName);
                 c.EnableAnnotations();
             });
@@ -63,7 +63,7 @@ namespace PostService
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PostService v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Posts.Service v1"));
             }
 
             app.UseMiddleware<ExceptionHandlingMiddleware>();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Serilog;
 
-namespace PostService.Behaviours
+namespace GeekIAm.Behaviours
 {
     public class LoggingBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {

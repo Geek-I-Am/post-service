@@ -1,4 +1,4 @@
-namespace PostService.Features
+namespace GeekIAm.Features
 {
     internal static class Routes
     {

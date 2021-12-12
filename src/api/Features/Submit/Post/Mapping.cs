@@ -1,9 +1,9 @@
 using AutoMapper;
 using Geek.Database.Entities;
-using PostService.Features.Submit.Post.Models;
+using GeekIAm.Features.Submit.Post.Models;
 
 
-namespace PostService.Features.Submit.Post
+namespace GeekIAm.Features.Submit.Post
 {
     public class Mapping : Profile
     {

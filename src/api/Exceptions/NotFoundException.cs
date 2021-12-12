@@ -1,7 +1,7 @@
 using System;
-using PostService.Resources;
+using GeekIAm.Resources;
 
-namespace PostService.Exceptions
+namespace GeekIAm.Exceptions
 {
     [Serializable]
     public class NotFoundException : ArticlesException

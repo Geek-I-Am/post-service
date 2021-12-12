@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PostService.Resources
+namespace GeekIAm.Resources
 {
     using System;
 
@@ -35,7 +35,7 @@ namespace PostService.Resources
                 if (object.Equals(null, resourceMan))
                 {
                     System.Resources.ResourceManager temp =
-                        new System.Resources.ResourceManager("PostService.Resources.ExceptionTitle",
+                        new System.Resources.ResourceManager("Posts.Service.Resources.ExceptionTitle",
                             typeof(ExceptionTitle).Assembly);
                     resourceMan = temp;
                 }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using PostService.Resources;
+using GeekIAm.Resources;
 
-namespace PostService.Exceptions
+namespace GeekIAm.Exceptions
 {
     public class ValidationException : ArticlesException
     {

@@ -1,4 +1,4 @@
-namespace PostService.Features.Submit.Post
+namespace GeekIAm.Features.Submit.Post
 {
     public class Response
     {

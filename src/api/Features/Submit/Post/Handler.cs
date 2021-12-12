@@ -7,7 +7,7 @@ using Threenine.ApiResponse;
 using Threenine.Data;
 
 
-namespace PostService.Features.Submit.Post
+namespace GeekIAm.Features.Submit.Post
 {
     public class Handler : IRequestHandler<Command, SingleResponse<Response>>
     {
