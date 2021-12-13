@@ -68,4 +68,9 @@
             <DependentUpon>ExceptionMessage.resx</DependentUpon>
         </Compile>
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\GeekIAm.Domain\GeekIAm.Domain.csproj" />
+      <ProjectReference Include="..\GeekIAm.Data.Services\GeekIAm.Data.Services.csproj" />
+      <ProjectReference Include="..\GeekIAm\GeekIAm.csproj" />
+    </ItemGroup>
 </Project> 

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\GeekIAm.Domain\GeekIAm.Domain.csproj" />
+      <ProjectReference Include="..\GeekIAm\GeekIAm.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="10.1.1" />
+      <PackageReference Include="Geek.Database.Entities" Version="0.1.7" />
+      <PackageReference Include="Threenine.Data" Version="2.1.1" />
+    </ItemGroup>
+
+</Project>
