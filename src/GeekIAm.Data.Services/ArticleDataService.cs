@@ -18,14 +18,13 @@ public class ArticleDataService : IDataService<Submission, Submitted>
     }
     public async Task<Submitted> Process(Submission aggregate)
     {
-        return null;
-        /*var article =  _mapper.Map<Articles>(aggregate);
+  
+        var article =  _mapper.Map<Articles>(aggregate);
          var repo = _unitOfWork.GetRepository<Articles>();
          repo.Insert(article);
          await _unitOfWork.CommitAsync();
-         var sub = new Submitted { };
-         sub.
-         
-         return new Submitted*/
+
+
+         return new Submitted();
     }
 }
