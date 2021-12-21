@@ -29,10 +29,10 @@ namespace GeekIAm.Features.Submit.Post
             Tags = new[] { Routes.Submit })
         ]
         [ProducesResponseType(StatusCodes.Status202Accepted, Type = typeof(Response))]
-        public async override Task<ActionResult<SingleResponse<Response>>> HandleAsync([FromBody] Command request, CancellationToken cancellationToken = new())
+        public override async Task<ActionResult<SingleResponse<Response>>> HandleAsync([FromBody] Command request, CancellationToken cancellationToken = new())
         {
             var result = await _mediator.Send(request, cancellationToken);
-            return result.IsValid ? new AcceptedResult(): new BadRequestObjectResult(result.Errors);
+            return result.IsValid ? new AcceptedResult(new Uri(Routes.Submit, UriKind.Relative), new {result.Item.Title,  result.Item.Url }): new BadRequestObjectResult(result.Errors);
         }
     }
 }

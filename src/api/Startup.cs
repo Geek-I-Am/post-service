@@ -1,6 +1,10 @@
 using FluentValidation;
-using Geek.Database;
 using GeekIAm.Behaviours;
+using Geekiam.Data;
+using Geekiam.Data.Services;
+using Geekiam.Database;
+using Geekiam.Domain.Requests.Posts;
+using Geekiam.Domain.Responses.Posts;
 using GeekIAm.Middleware;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -45,6 +49,7 @@ namespace GeekIAm
                 .AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>))
                 .AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 
+            services.AddTransient<IDataService<Submission, Submitted>, PostsDataService>();
             services.AddAutoMapper(typeof(Startup));
         }
 
