@@ -8,7 +8,10 @@ namespace GeekIAm.Features.Submit.Post
         public Validator()
         {
             RuleFor(x => x.Article.Title).NotEmpty().MaximumLength(75);
-            RuleFor(x => x.Article.Summary).NotEmpty().MaximumLength(300);
+            RuleFor(x => x.Article.Summary).NotEmpty()
+                .MaximumLength(300)
+                .WithMessage("The maximum allowed length for a summary is 300 characters");
+            
             RuleFor(x => x.Article.Author).NotEmpty().MaximumLength(60);
 
             RuleFor(x => x.Article.Url).NotEmpty();

@@ -1,12 +1,11 @@
 using System;
-using GeekIAm.Resources;
 
 namespace GeekIAm.Exceptions
 {
     [Serializable]
     public class NotFoundException : ArticlesException
     {
-        public NotFoundException(string title, string message) : base(ExceptionTitle.NotFound, message)
+        public NotFoundException(string title, string message) : base(nameof(NotFoundException), message)
         {
         }
     }

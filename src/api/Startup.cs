@@ -17,6 +17,7 @@ using Microsoft.OpenApi.Models;
 using Serilog;
 using Threenine.Data.DependencyInjection;
 
+
 namespace GeekIAm
 {
     public class Startup
