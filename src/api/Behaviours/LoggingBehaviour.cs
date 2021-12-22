@@ -6,34 +6,33 @@ using System.Threading.Tasks;
 using MediatR;
 using Serilog;
 
-namespace GeekIAm.Behaviours
+namespace Geekiam.Posts.Service.Behaviours;
+
+public class LoggingBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
 {
-    public class LoggingBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    private readonly ILogger _logger;
+
+    public LoggingBehaviour(ILogger logger)
     {
-        private readonly ILogger _logger;
+        _logger = logger;
+    }
 
-        public LoggingBehaviour(ILogger logger)
+    public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken,
+        RequestHandlerDelegate<TResponse> next)
+    {
+        //Query
+        _logger.Information($"Handling {typeof(TRequest).Name}");
+        Type myType = request.GetType();
+        IList<PropertyInfo> props = new List<PropertyInfo>(myType.GetProperties());
+        foreach (PropertyInfo prop in props)
         {
-            _logger = logger;
+            object propValue = prop.GetValue(request, null);
+            _logger.Information("{Property} : {@Value}", prop.Name, propValue);
         }
 
-        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken,
-            RequestHandlerDelegate<TResponse> next)
-        {
-            //Query
-            _logger.Information($"Handling {typeof(TRequest).Name}");
-            Type myType = request.GetType();
-            IList<PropertyInfo> props = new List<PropertyInfo>(myType.GetProperties());
-            foreach (PropertyInfo prop in props)
-            {
-                object propValue = prop.GetValue(request, null);
-                _logger.Information("{Property} : {@Value}", prop.Name, propValue);
-            }
-
-            var response = await next();
-            //FilterResponse
-            _logger.Information($"Handled {typeof(TResponse).Name}");
-            return response;
-        }
+        var response = await next();
+        //FilterResponse
+        _logger.Information($"Handled {typeof(TResponse).Name}");
+        return response;
     }
 }

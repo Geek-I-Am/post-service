@@ -1,7 +1,6 @@
-namespace GeekIAm.Features
+namespace Geekiam.Posts.Service.Features;
+
+internal static class Routes
 {
-    internal static class Routes
-    {
-        public const string Submit = "submit";
-    }
+    public const string Submit = "submit";
 }

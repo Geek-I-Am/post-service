@@ -1,13 +1,12 @@
 using System.Collections.Generic;
 
-namespace GeekIAm.Exceptions
-{
-    public class ValidationException : ArticlesException
-    {
-        public ValidationException(string message, IReadOnlyDictionary<string, string[]> errors) : base(
-            nameof(ValidationException), message) =>
-            Errors = errors;
+namespace Geekiam.Posts.Service.Exceptions;
 
-        public IReadOnlyDictionary<string, string[]> Errors { get; }
-    }
+public class ValidationException : ArticlesException
+{
+    public ValidationException(string message, IReadOnlyDictionary<string, string[]> errors) : base(
+        nameof(ValidationException), message) =>
+        Errors = errors;
+
+    public IReadOnlyDictionary<string, string[]> Errors { get; }
 }

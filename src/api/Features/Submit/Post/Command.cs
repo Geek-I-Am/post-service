@@ -1,13 +1,12 @@
-using GeekIAm.Features.Submit.Post.Models;
+using Geekiam.Posts.Service.Features.Submit.Post.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Threenine.ApiResponse;
 
-namespace GeekIAm.Features.Submit.Post
+namespace Geekiam.Posts.Service.Features.Submit.Post;
+
+public class Command : IRequest<SingleResponse<Response>>
 {
-    public class Command : IRequest<SingleResponse<Response>>
-    {
-        [FromBody] public PostBody Article { get; set; }
+    [FromBody] public PostBody Article { get; set; }
         
-    }
 }

@@ -20,8 +20,8 @@
         <NoDefaultExcludes>true</NoDefaultExcludes>
         <PackageReleaseNotes>Added CustomSchemaIds to Swagger end point definitions. Mediator Logging and Validation Behaviour pipelines implemented</PackageReleaseNotes>
       <UserSecretsId>c9f90c78-2533-46c7-aa44-ef59b79a8591</UserSecretsId>
-      <AssemblyName>GeekIAm.Posts.Service</AssemblyName>
-      <RootNamespace>GeekIAm.Posts.Service</RootNamespace>
+      <AssemblyName>Geekiam.Posts.Service</AssemblyName>
+      <RootNamespace>Geekiam.Posts.Service</RootNamespace>
   </PropertyGroup>
     <ItemGroup>
         <Content Include="**\**" Exclude="**\bin\**;**\obj\**;**\.idea\**" />

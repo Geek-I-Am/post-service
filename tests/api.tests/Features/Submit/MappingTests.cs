@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using AutoMapper;
 using FizzWare.NBuilder;
 using Geekiam.Domain.Requests.Posts;
-using GeekIAm.Features.Submit.Post;
-using GeekIAm.Features.Submit.Post.Models;
+using Geekiam.Posts.Service.Features.Submit.Post;
+using Geekiam.Posts.Service.Features.Submit.Post.Models;
 using Shouldly;
 using Xunit;
 
