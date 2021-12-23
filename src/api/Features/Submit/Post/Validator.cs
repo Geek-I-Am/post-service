@@ -24,8 +24,6 @@ public class Validator : AbstractValidator<Command>
             .Must(uri => Uri.TryCreate(uri, UriKind.Absolute, out _))
             .When(x => !string.IsNullOrEmpty(x.Article.Url))
             .WithMessage("A valid url is required");
-
-
     }
         
 }

@@ -8,7 +8,7 @@ using Geekiam.Posts.Service.Features.Submit.Post.Models;
 using Shouldly;
 using Xunit;
 
-namespace TestProject1.Features.Submit
+namespace Api.Tests.Features.Submit
 {
     public class MappingTests
     {
@@ -31,9 +31,6 @@ namespace TestProject1.Features.Submit
             result.Article.Summary.ShouldBeEquivalentTo(TestCommand.Article.Summary);
             result.Article.Title.ShouldBeEquivalentTo(TestCommand.Article.Title);
             result.Article.Url.ShouldBeOfType<Uri>();
-           
-
-
         }
 
         private Command TestCommand => Builder<Command>.CreateNew()
