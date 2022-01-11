@@ -9,6 +9,7 @@ using Serilog;
 namespace Geekiam.Posts.Service.Behaviours;
 
 public class LoggingBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+where TRequest : IRequest<TResponse>
 {
     private readonly ILogger _logger;
 

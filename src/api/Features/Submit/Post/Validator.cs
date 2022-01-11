@@ -7,15 +7,15 @@ public class Validator : AbstractValidator<Command>
 {
     public Validator()
     {
-        RuleFor(x => x.Article.Title).NotEmpty().MaximumLength(75);
-        RuleFor(x => x.Article.Summary).NotEmpty()
+        RuleFor(x => x.Post.Article.Title).NotEmpty().MaximumLength(75);
+        RuleFor(x => x.Post.Body.Summary).NotEmpty()
             .MaximumLength(300)
             .WithMessage("The maximum allowed length for a summary is 300 characters");
             
-        RuleFor(x => x.Article.Author).NotEmpty().MaximumLength(60);
+     
 
-        RuleFor(x => x.Article.Url).NotEmpty();
-        RuleFor(x => x.Article.Url)
+        RuleFor(x => x.Post.Article.Url).NotEmpty();
+        /*RuleFor(x => x.Article.Url)
             .MinimumLength(2)
             .MaximumLength(286);
             
@@ -23,7 +23,7 @@ public class Validator : AbstractValidator<Command>
         RuleFor(x => x.Article.Url)
             .Must(uri => Uri.TryCreate(uri, UriKind.Absolute, out _))
             .When(x => !string.IsNullOrEmpty(x.Article.Url))
-            .WithMessage("A valid url is required");
+            .WithMessage("A valid url is required");*/
     }
         
 }

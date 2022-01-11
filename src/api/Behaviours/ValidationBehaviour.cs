@@ -11,7 +11,8 @@ using Threenine.ApiResponse;
 namespace Geekiam.Posts.Service.Behaviours;
 
 public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-    where TResponse : class
+    where TRequest : IRequest<TResponse>
+where TResponse : class
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;
     private readonly ILogger _logger;

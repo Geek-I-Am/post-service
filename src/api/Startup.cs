@@ -40,9 +40,9 @@ public class Startup
             c.EnableAnnotations();
         });
 
-        services.AddDbContext<GeekContext>(options =>
+        services.AddDbContext<GeekiamContext>(options =>
             options.UseNpgsql(Configuration.GetConnectionString("articles"))
-        ).AddUnitOfWork<GeekContext>();
+        ).AddUnitOfWork<GeekiamContext>();
             
         services.AddTransient<ExceptionHandlingMiddleware>();
         services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
@@ -50,7 +50,7 @@ public class Startup
             .AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>))
             .AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 
-        services.AddTransient<IDataService<Submission, Submitted>, PostsDataService>();
+        services.AddTransient<IDataService<Submission, Submitted>, SubmitArticleDataService>();
         services.AddAutoMapper(typeof(Startup));
     }
 
@@ -61,7 +61,7 @@ public class Startup
             
         using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
         {
-            var context = serviceScope.ServiceProvider.GetService<GeekContext>();
+            var context = serviceScope.ServiceProvider.GetService<GeekiamContext>();
             context?.Database.Migrate();
         }
             
