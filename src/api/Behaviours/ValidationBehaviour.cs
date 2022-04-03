@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using FluentValidation;
 using MediatR;
 using Serilog;
-using Threenine.ApiResponse;
 
 namespace Geekiam.Posts.Service.Behaviours;
 

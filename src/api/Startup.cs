@@ -1,9 +1,5 @@
 using FluentValidation;
-using Geekiam.Data;
-using Geekiam.Data.Services;
 using Geekiam.Database;
-using Geekiam.Domain.Requests.Posts;
-using Geekiam.Domain.Responses.Posts;
 using Geekiam.Posts.Service.Behaviours;
 using Geekiam.Posts.Service.Middleware;
 using MediatR;
@@ -16,7 +12,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using Threenine.Data.DependencyInjection;
-
 
 namespace Geekiam.Posts.Service;
 
@@ -49,8 +44,7 @@ public class Startup
         services.AddMediatR(typeof(Startup))
             .AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>))
             .AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
-
-        services.AddTransient<IDataService<Submission, Submitted>, SubmitArticleDataService>();
+        
         services.AddAutoMapper(typeof(Startup));
     }
 

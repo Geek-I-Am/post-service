@@ -11,7 +11,7 @@ using Threenine.ApiResponse;
 namespace Geekiam.Posts.Service.Features.Submit.Post;
 
 [Route(Routes.Submit)]
-public class Post : BaseAsyncEndpoint.WithRequest<Command>.WithResponse<SingleResponse<Response>>
+public class Post : EndpointBaseAsync.WithRequest<Command>.WithActionResult<SingleResponse<Response>>
 {
     private readonly IMediator _mediator;
 
