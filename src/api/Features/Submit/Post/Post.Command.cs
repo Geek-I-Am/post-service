@@ -17,14 +17,7 @@ public class Article
     public string Summary { get; set; }
     public string Content { get; set; }
     public string Url { get; set; }
-    public Metadata Metadata { get; set; }
-    
-}
-
-public class Metadata
-{
     public IList<string> Tags { get; set; }
     public IList<string> Categories { get; set; }
-    
     
 }
