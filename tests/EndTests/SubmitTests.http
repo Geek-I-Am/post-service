@@ -1,0 +1,23 @@
+###
+GET {{host}}/submit/{{article_id}}
+Accept: application/json
+###
+
+###
+POST {{host}}/submit
+Content-Type: application/json
+
+{
+  "article": {
+    "title": "grange hill",
+    "summary": "poo poo poo",
+    "content": "pooo poooo",
+    "url": "http://threenine.co.uk/poo",
+    "tags": [
+      "happy"
+    ],
+    "categories": [
+      "sad"
+    ]
+  }
+}
