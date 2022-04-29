@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Geekiam.Posts.Service.Features.Submit.Get;
+namespace Geekiam.Posts.Service.Features.Posts.Get;
 
 public class Validator : AbstractValidator<Query>
 {

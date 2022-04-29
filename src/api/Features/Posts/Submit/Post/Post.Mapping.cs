@@ -1,7 +1,7 @@
 using AutoMapper;
 using Geekiam.Database.Entities;
 
-namespace Geekiam.Posts.Service.Features.Submit.Post;
+namespace Geekiam.Posts.Service.Features.Posts.Post;
 
 public class Mapping: Profile
 {

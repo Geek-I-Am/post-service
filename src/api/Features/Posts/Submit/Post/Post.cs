@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using Threenine.ApiResponse;
 
-namespace Geekiam.Posts.Service.Features.Submit.Post;
+namespace Geekiam.Posts.Service.Features.Posts.Post;
 
-[Route(Routes.Submit)]
+[Route(ResourceRoutes.Submit)]
 public class Post : EndpointBaseAsync.WithRequest<Command>.WithActionResult<SingleResponse<Response>>
 {
     private readonly IMediator _mediator;
@@ -26,12 +26,12 @@ public class Post : EndpointBaseAsync.WithRequest<Command>.WithActionResult<Sing
         Summary = "Post new article",
         Description = "Add new article to GeekIAm Article list",
         OperationId = "153E384B-7EF5-4EC8-BFD7-E10E7F47E6C1",
-        Tags = new[] { Routes.Submit })
+        Tags = new[] { ResourceRoutes.Submit })
     ]
     [ProducesResponseType(StatusCodes.Status202Accepted, Type = typeof(Response))]
     public override async Task<ActionResult<SingleResponse<Response>>> HandleAsync([FromBody] Command request, CancellationToken cancellationToken = new())
     {
         var result = await _mediator.Send(request, cancellationToken);
-        return result.IsValid ? new AcceptedResult(new Uri(Routes.Submit, UriKind.Relative), new {result.Item.Title,  result.Item.Url }): new BadRequestObjectResult(result.Errors);
+        return result.IsValid ? new CreatedResult( new Uri(string.Concat(ResourceRoutes.Submit, "/", result.Item.Id), UriKind.Relative), new {result.Item.Id }): new BadRequestObjectResult(result.Errors);
     }
 }

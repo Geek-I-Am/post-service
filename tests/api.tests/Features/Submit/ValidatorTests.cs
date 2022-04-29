@@ -1,5 +1,5 @@
 using FluentValidation.TestHelper;
-using Geekiam.Posts.Service.Features.Submit.Post;
+using Geekiam.Posts.Service.Features.Posts.Post;
 using Xunit;
 
 namespace TestProject1.Features.Submit;

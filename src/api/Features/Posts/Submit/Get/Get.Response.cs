@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Geekiam.Posts.Service.Features.Submit.Get;
+namespace Geekiam.Posts.Service.Features.Posts.Get;
 
 public class Response 
 {

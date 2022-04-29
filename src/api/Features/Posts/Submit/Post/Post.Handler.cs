@@ -9,7 +9,7 @@ using MediatR;
 using Threenine.ApiResponse;
 using Threenine.Data;
 
-namespace Geekiam.Posts.Service.Features.Submit.Post;
+namespace Geekiam.Posts.Service.Features.Posts.Post;
 
 public class Handler : IRequestHandler<Command, SingleResponse<Response>>
 {
@@ -34,7 +34,7 @@ public class Handler : IRequestHandler<Command, SingleResponse<Response>>
         if (request.Article.Categories != null)
             SaveCategories(request.Article.Categories.ToList(), article.Id);
 
-        return new SingleResponse<Response>(new Response { Title = article.Title, Url = new Uri(article.Url) });
+        return new SingleResponse<Response>(new Response { Id = article.Id});
     }
 
     private void SaveCategories(List<string> categories, Guid articleId)

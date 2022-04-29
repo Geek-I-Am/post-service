@@ -1,7 +1,6 @@
-using System;
 using FluentValidation;
 
-namespace Geekiam.Posts.Service.Features.Submit.Post;
+namespace Geekiam.Posts.Service.Features.Posts.Post;
 
 public class Validator : AbstractValidator<Command>
 {

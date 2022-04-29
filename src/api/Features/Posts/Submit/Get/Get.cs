@@ -5,9 +5,9 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace Geekiam.Posts.Service.Features.Submit.Get;
+namespace Geekiam.Posts.Service.Features.Posts.Get;
 
-[Route(Routes.Submit)]
+[Route(ResourceRoutes.Submit)]
 public class Get : EndpointBaseAsync.WithRequest<Query>.WithActionResult<Response>
 {
     private readonly IMediator _mediator;
@@ -22,7 +22,7 @@ public class Get : EndpointBaseAsync.WithRequest<Query>.WithActionResult<Respons
         Summary = "Get an article by Id",
         Description = "get article to GeekIAm Article list",
         OperationId = "E5CD5320-B283-4E58-BE38-177389265D6D",
-        Tags = new[] { Routes.Submit })
+        Tags = new[] { ResourceRoutes.Submit })
     ]
     public override async Task<ActionResult<Response>> HandleAsync([FromRoute] Query request, CancellationToken cancellationToken = new CancellationToken())
     {

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Threenine.ApiResponse;
 using Threenine.Data;
 
-namespace Geekiam.Posts.Service.Features.Submit.Get;
+namespace Geekiam.Posts.Service.Features.Posts.Get;
 
 public class Handler : IRequestHandler<Query, SingleResponse<Response>>
 {

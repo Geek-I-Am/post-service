@@ -6,7 +6,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DC95E8F7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api.tests", "tests\api.tests\api.tests.csproj", "{D68AA902-F1A7-4CB8-859A-24656411463F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndTests", "tests\EndTests\EndTests.csproj", "{2B8381BB-C7D9-4565-8665-854F7FBB450B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndPointTests", "tests\EndPointTests\EndPointTests.csproj", "{2B8381BB-C7D9-4565-8665-854F7FBB450B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
