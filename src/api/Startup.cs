@@ -1,7 +1,7 @@
+using Boleyn.Service.Behaviours;
+using Boleyn.Service.Middleware;
 using FluentValidation;
 using Geekiam.Database;
-using Geekiam.Posts.Service.Behaviours;
-using Geekiam.Posts.Service.Middleware;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,7 +13,7 @@ using Microsoft.OpenApi.Models;
 using Serilog;
 using Threenine.Data.DependencyInjection;
 
-namespace Geekiam.Posts.Service;
+namespace Boleyn.Service;
 
 public class Startup
 {
@@ -30,7 +30,7 @@ public class Startup
         services.AddControllers();
         services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Geekiam.Posts.Service", Version = "v1" });
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Boleyn", Version = "v1" });
             c.CustomSchemaIds(x => x.FullName);
             c.EnableAnnotations();
         });
@@ -63,7 +63,7 @@ public class Startup
         {
             app.UseDeveloperExceptionPage();
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Geekiam.Posts.Service v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Boleyn v1"));
         }
 
         app.UseMiddleware<ExceptionHandlingMiddleware>();

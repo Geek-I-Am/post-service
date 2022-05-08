@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Threenine.ApiResponse;
 using Threenine.Data;
 
-namespace Geekiam.Posts.Service.Features.Posts.Get;
+namespace Boleyn.Service.Activities.Posts.Queries.Get;
 
 public class Handler : IRequestHandler<Query, SingleResponse<Response>>
 {
@@ -21,8 +21,8 @@ public class Handler : IRequestHandler<Query, SingleResponse<Response>>
     }
     public async Task<SingleResponse<Response>> Handle(Query request, CancellationToken cancellationToken)
     {
-        var repo = _unitOfWork.GetRepositoryAsync<Articles>();
-        var article = await repo.SingleOrDefaultAsync(x => x.Id == request.Id, include: inc => inc.Include(x => x.ArticleTags));
+        var article = await _unitOfWork.GetRepositoryAsync<Articles>()
+            .SingleOrDefaultAsync(x => x.Id == request.Id);
 
         return new SingleResponse<Response>(_mapper.Map<Response>(article));
 

@@ -1,6 +1,6 @@
 using System;
 
-namespace Geekiam.Posts.Service.Exceptions;
+namespace Boleyn.Service.Exceptions;
 
 public class ArticlesException : Exception
 {

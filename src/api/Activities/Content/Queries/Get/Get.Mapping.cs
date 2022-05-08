@@ -2,7 +2,7 @@ using System.Linq;
 using AutoMapper;
 using Geekiam.Database.Entities;
 
-namespace Geekiam.Posts.Service.Features.Posts.Get;
+namespace Boleyn.Service.Activities.Posts.Queries.Get;
 
 public class Mapping : Profile
 {
@@ -10,6 +10,7 @@ public class Mapping : Profile
     {
           CreateMap<Articles, Response>(MemberList.None)
             .ForMember(dest => dest.Summary, opt => opt.MapFrom(src => src.Summary))
-            .ForMember(dest => dest.Tags, opt => opt.MapFrom(src => src.ArticleTags.Select(x => x.Tag).ToArray()));
+            .ForMember(dest => dest.Content, opt => opt.MapFrom(src => src.Content))
+            .ForMember(dest => dest.Url, opt => opt.MapFrom(src => src.Url));
     }
 }

@@ -2,7 +2,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace Geekiam.Posts.Service.Features;
+namespace Boleyn.Service.Activities;
 
 public static class StringExtensions
 {

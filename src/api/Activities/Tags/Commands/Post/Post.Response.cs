@@ -1,6 +1,6 @@
 using System;
 
-namespace Geekiam.Posts.Service.Features.Posts.Post;
+namespace Boleyn.Service.Activities.Tags.Commands.Post;
 
 public class Response
 {

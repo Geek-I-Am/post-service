@@ -1,3 +1,5 @@
+
+
 ###
 GET {{host}}/submit/{{article_id}}
 Accept: application/json
@@ -12,7 +14,7 @@ Content-Type: application/json
     "title": "grange hill",
     "summary": "poo poo poodgfdgdfg",
     "content": "pooo poooo",
-    "url": "http://threenine.co.uk/poo0p",
+    "url": "http://threenine.co.uk/{{$timestamp}}",
     "tags": [
       "happy"
     ],

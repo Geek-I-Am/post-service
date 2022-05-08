@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
 
-namespace Geekiam.Posts.Service;
+namespace Boleyn.Service;
 
 public class Program
 {
@@ -17,12 +17,12 @@ public class Program
             .CreateBootstrapLogger();
         try
         {
-            Log.Information("Geekiam.Posts.Service Application is starting");
+            Log.Information("Boleyn Application is starting");
             CreateHostBuilder(args).Build().Run();
         }
         catch (Exception ex)
         {
-            Log.Fatal(ex, "Geekiam.Posts.Service application failed to start");
+            Log.Fatal(ex, "Boleyn application failed to start");
         }
         finally
         {

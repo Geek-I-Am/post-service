@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Geekiam.Posts.Service.Exceptions;
+namespace Boleyn.Service.Exceptions;
 
 public class ValidationException : ArticlesException
 {

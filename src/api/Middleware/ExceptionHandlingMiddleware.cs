@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Geekiam.Posts.Service.Exceptions;
+using Boleyn.Service.Exceptions;
 using Microsoft.AspNetCore.Http;
 
-namespace Geekiam.Posts.Service.Middleware;
+namespace Boleyn.Service.Middleware;
 
 internal class ExceptionHandlingMiddleware : IMiddleware
 {

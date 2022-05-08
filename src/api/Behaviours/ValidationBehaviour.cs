@@ -7,7 +7,7 @@ using FluentValidation;
 using MediatR;
 using Serilog;
 
-namespace Geekiam.Posts.Service.Behaviours;
+namespace Boleyn.Service.Behaviours;
 
 public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>
