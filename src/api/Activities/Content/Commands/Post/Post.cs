@@ -28,7 +28,7 @@ public class Post : EndpointBaseAsync.WithRequest<Command>.WithActionResult<Sing
         OperationId = "153E384B-7EF5-4EC8-BFD7-E10E7F47E6C1",
         Tags = new[] { ResourceRoutes.Posts })
     ]
-    [ProducesResponseType(StatusCodes.Status202Accepted, Type = typeof(Response))]
+    [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(Response))]
     public override async Task<ActionResult<SingleResponse<Response>>> HandleAsync([FromBody] Command request, CancellationToken cancellationToken = new())
     {
         var result = await _mediator.Send(request, cancellationToken);

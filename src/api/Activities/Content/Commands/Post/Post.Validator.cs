@@ -1,3 +1,4 @@
+using System;
 using FluentValidation;
 
 namespace Boleyn.Service.Activities.Posts.Commands.Post
@@ -13,7 +14,8 @@ namespace Boleyn.Service.Activities.Posts.Commands.Post
                 .WithMessage("The maximum allowed length for a summary is 300 characters");
         
 
-            RuleFor(x => x.Article.Url).NotEmpty();
+            RuleFor(x => x.Article.Url).Must(uri => Uri.TryCreate(uri, UriKind.RelativeOrAbsolute, out _)).When(x => !string.IsNullOrEmpty(x.Article.Url)).WithMessage("A valid Url is required");
+           
        
         }
         
