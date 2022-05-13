@@ -2,7 +2,7 @@
 GET {{host}}/posts/{{article_id}}
 Accept: application/json
 
-> ../Asserts/Should_be_200_Ok.js
+> ../Asserts/Should_be_200_OK.js
 
 ###
 
@@ -12,9 +12,9 @@ Content-Type: application/json
 
 {
   "article": {
-    "title": "grange hill",
-    "summary": "poo poo poodgfdgdfg",
-    "content": "pooo poooo",
+    "title": "Some Amazing Blog Post",
+    "summary": "This could be anything",
+    "content": "blah blah blah blah",
     "url": "http://threenine.co.uk/{{$timestamp}}"
   }
 }

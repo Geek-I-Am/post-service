@@ -2,6 +2,9 @@
   "request": {
     "https":  {
       "rejectUnauthorized": false
+    },
+    "log": {
+      "supportAnsiColors": true
     }
   }
 }

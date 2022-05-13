@@ -20,7 +20,6 @@ Task("Restore")
                   Information($"Building { project.ToString()}");
                   DotNetRestore(project.ToString());
               }
-
 });
 
 Task("Build")
@@ -53,8 +52,6 @@ Task("Test")
        Information($"Running Tests : { project.ToString()}");
        DotNetTest(project.ToString(), testSettings );
      }
-
-
 });
 
 

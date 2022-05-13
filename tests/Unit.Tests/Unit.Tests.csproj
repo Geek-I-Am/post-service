@@ -33,4 +33,9 @@
       <ProjectReference Include="..\..\src\api\Boleyn.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Activities\Posts\Content\Commands" />
+      <Folder Include="Activities\Posts\Content\Queries" />
+    </ItemGroup>
+
 </Project>
