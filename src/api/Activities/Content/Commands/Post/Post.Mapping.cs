@@ -12,6 +12,9 @@ namespace Boleyn.Service.Activities.Posts.Commands.Post
                 .ForMember(dest => dest.Summary, opt => opt.MapFrom(src => src.Summary))
                 .ForMember(dest => dest.Content, opt => opt.MapFrom(src => src.Content));
 
+            CreateMap<Articles, Response>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id));
+
         }
     
     }

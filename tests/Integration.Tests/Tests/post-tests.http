@@ -22,3 +22,20 @@ Content-Type: application/json
 > ../Asserts/Should_be_201.js
 
 ###
+
+### Should Throw a COnflict message
+POST {{host}}/posts
+Content-Type: application/json
+
+{
+  "article": {
+    "title": "Some Amazing Blog Post",
+    "summary": "This could be anything",
+    "content": "blah blah blah blah",
+    "url": "http://threenine.co.uk/1652472817376"
+  }
+}
+
+> ../Asserts/Should_be_409_conflict.js
+
+###

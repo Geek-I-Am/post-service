@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Ardalis.ApiEndpoints;
@@ -32,6 +33,26 @@ public class Post : EndpointBaseAsync.WithRequest<Command>.WithActionResult<Sing
     public override async Task<ActionResult<SingleResponse<Response>>> HandleAsync([FromBody] Command request, CancellationToken cancellationToken = new())
     {
         var result = await _mediator.Send(request, cancellationToken);
-        return result.IsValid ? new CreatedResult( new Uri(string.Concat(ResourceRoutes.Posts, "/", result.Item.Id), UriKind.Relative), new {result.Item.Id }): new BadRequestObjectResult(result.Errors);
+        if (result.IsValid)
+        {
+            return new CreatedResult(new Uri(string.Concat(ResourceRoutes.Posts, $"/{result.Item.Id}"), UriKind.Relative),
+                new { result.Item });
+        }
+
+        return await HandleErrors(result.Errors);
+    }
+    
+    private Task<ActionResult> HandleErrors(List<KeyValuePair<string, string[]>> errors)
+    {
+        ActionResult result = null;
+        errors.ForEach(error =>
+        {
+            result = error.Key switch
+            {
+                "Conflict" => new ConflictResult(),
+                _ => new BadRequestObjectResult(errors)
+            };
+        });
+        return Task.FromResult<ActionResult>(result);
     }
 }
