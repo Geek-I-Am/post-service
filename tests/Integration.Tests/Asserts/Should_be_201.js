@@ -7,3 +7,6 @@ client.test("Response content-type is json", () => {
     var contentType = response.contentType.mimeType;
     client.assert(contentType === "application/json", "Expected content-type 'application/json' but received '" + contentType + "'");
 });
+
+
+

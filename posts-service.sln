@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit.Tests", "tests\Unit.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integration.Tests", "tests\Integration.Tests\Integration.Tests.csproj", "{2B8381BB-C7D9-4565-8665-854F7FBB450B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "seeding", "seeding", "{C3A11418-5CB4-43B8-B221-F233B7D025A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boleyn.Cms.Seeding", "seeding\Boleyn.Cms.Seeding\Boleyn.Cms.Seeding.csproj", "{043BE5D1-A165-4604-BCD2-B3E8AB50D159}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +30,14 @@ Global
 		{2B8381BB-C7D9-4565-8665-854F7FBB450B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B8381BB-C7D9-4565-8665-854F7FBB450B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B8381BB-C7D9-4565-8665-854F7FBB450B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{043BE5D1-A165-4604-BCD2-B3E8AB50D159}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{043BE5D1-A165-4604-BCD2-B3E8AB50D159}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{043BE5D1-A165-4604-BCD2-B3E8AB50D159}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{043BE5D1-A165-4604-BCD2-B3E8AB50D159}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D68AA902-F1A7-4CB8-859A-24656411463F} = {DC95E8F7-EB3D-40D0-A969-FCE7696447AB}
 		{2B8381BB-C7D9-4565-8665-854F7FBB450B} = {DC95E8F7-EB3D-40D0-A969-FCE7696447AB}
+		{043BE5D1-A165-4604-BCD2-B3E8AB50D159} = {C3A11418-5CB4-43B8-B221-F233B7D025A1}
 	EndGlobalSection
 EndGlobal
