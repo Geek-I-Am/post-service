@@ -1,10 +1,3 @@
-###
-GET {{host}}/posts/{{article_id}}
-Accept: application/json
-
-> ../Asserts/Should_be_200_OK.js
-
-###
 
 ###
 POST {{host}}/posts
@@ -19,7 +12,7 @@ Content-Type: application/json
   }
 }
 
-> ../Asserts/Should_be_201.js
+> ../../Asserts/Should_be_201.js
 
 ###
 

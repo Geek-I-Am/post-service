@@ -8,5 +8,7 @@ client.test("Response content-type is json", () => {
     client.assert(contentType === "application/json", "Expected content-type 'application/json' but received '" + contentType + "'");
 });
 
-
-
+client.test("Location should be set to include path to created resource", () => {
+     var location = response.headers.headers.location
+    client.assert(location !== undefined || location !== null, "Expected a location set but got '" + location +"'")
+});
