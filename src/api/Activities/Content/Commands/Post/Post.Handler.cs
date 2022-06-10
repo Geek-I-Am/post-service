@@ -7,6 +7,7 @@ using AutoMapper;
 using Geekiam.Database.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Threenine;
 using Threenine.ApiResponse;
 using Threenine.Data;
 
@@ -14,36 +15,17 @@ namespace Boleyn.Service.Activities.Posts.Commands.Post
 {
     public class Handler : IRequestHandler<Command, SingleResponse<Response>>
     {
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IMapper _mapper;
+        private readonly IDataService _service;
 
-
-        public Handler(IUnitOfWork unitOfWork, IMapper mapper)
+        public Handler(IDataService service)
         {
-            _unitOfWork = unitOfWork;
-            _mapper = mapper;
+            _service = service;
         }
 
         public async Task<SingleResponse<Response>> Handle(Command request, CancellationToken cancellationToken)
         {
-          return  await CreatePost(_mapper.Map<Articles>(request.Article));
-        }
-
-        private async Task<SingleResponse<Response>> CreatePost(Articles article)
-        {
-            try
-            {
-              var created =  _unitOfWork.GetRepository<Articles>().Insert(article);
-                await _unitOfWork.CommitAsync();
-                return new SingleResponse<Response>(_mapper.Map<Response>(created));
-            }
-            catch (DbUpdateException dex)
-            {
-                return new SingleResponse<Response>(null, new List<KeyValuePair<string, string[]>>()
-                {
-                    new("Conflict", new []{"Article with URL Already exists", dex.InnerException.Message})
-                });
-            }
+            return await _service.Create<Articles, Article, Response>(request.Article);
+           
         }
     }
 }

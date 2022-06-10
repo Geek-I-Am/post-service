@@ -6,44 +6,45 @@ using System.Threading.Tasks;
 using FluentValidation;
 using MediatR;
 using Serilog;
+using ILogger = Serilog.ILogger;
 
-namespace Boleyn.Service.Behaviours;
-
-public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-    where TRequest : IRequest<TResponse>
-where TResponse : class
+namespace Api.Behaviours
 {
-    private readonly IEnumerable<IValidator<TRequest>> _validators;
-    private readonly ILogger _logger;
-
-    public ValidationBehaviour(IEnumerable<IValidator<TRequest>> validators, ILogger logger)
+    public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest,TResponse>
+        where TResponse : class where TRequest : IRequest<TResponse>
     {
-        _validators = validators;
-        _logger = logger;
-    }
+        private readonly IEnumerable<IValidator<TRequest>> _validators;
+        private readonly ILogger _logger;
 
-    public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken,
-        RequestHandlerDelegate<TResponse> next)
-    {
-        if (!typeof(TResponse).IsGenericType) return await next();
-        if (!_validators.Any()) return await next();
+        public ValidationBehaviour(IEnumerable<IValidator<TRequest>> validators, ILogger logger)
+        {
+            _validators = validators;
+            _logger = logger;
+        }
 
-        var context = new ValidationContext<TRequest>(request);
-        var validationResults =
-            await Task.WhenAll(_validators.Select(v => v.ValidateAsync(context, cancellationToken)));
-        var failures = validationResults.SelectMany(r => r.Errors)
-            .Where(f => f != null)
-            .GroupBy(x => x.PropertyName,
-                x => x.ErrorMessage,
-                (propertyName, errorMessages) => new
-                {
-                    Key = propertyName,
-                    Values = errorMessages.Distinct().ToArray()
-                })
-            .ToDictionary(x => x.Key, x => x.Values);
+        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken,
+            RequestHandlerDelegate<TResponse> next)
+        {
+            if (!typeof(TResponse).IsGenericType) return await next();
+            if (!_validators.Any()) return await next();
 
-        if (!failures.Any()) return await next();
+            var context = new ValidationContext<TRequest>(request);
+            var validationResults =
+                await Task.WhenAll(_validators.Select(v => v.ValidateAsync(context, cancellationToken)));
+            var failures = validationResults.SelectMany(r => r.Errors)
+                .Where(f => f != null)
+                .GroupBy(x => x.PropertyName,
+                    x => x.ErrorMessage,
+                    (propertyName, errorMessages) => new
+                    {
+                        Key = propertyName,
+                        Values = errorMessages.Distinct().ToArray()
+                    })
+                .ToDictionary(x => x.Key, x => x.Values);
 
-        return Activator.CreateInstance(typeof(TResponse), null, failures.ToList()) as TResponse;
+            if (!failures.Any()) return await next();
+
+            return Activator.CreateInstance(typeof(TResponse), null, failures.ToList()) as TResponse;
+        }
     }
 }

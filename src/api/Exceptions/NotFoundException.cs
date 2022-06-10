@@ -1,11 +1,13 @@
 using System;
 
-namespace Boleyn.Service.Exceptions;
 
-[Serializable]
-public class NotFoundException : ArticlesException
+namespace Api.Content.Exceptions
 {
-    public NotFoundException(string title, string message) : base(nameof(NotFoundException), message)
+    [Serializable]
+    public class NotFoundException : ApiException
     {
+        public NotFoundException(string title, string message) : base(title, message)
+        {
+        }
     }
 }

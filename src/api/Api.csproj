@@ -1,75 +1,23 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-    <PropertyGroup>
-        <PackageType>Template</PackageType>
-        <PackageId>Threenine.Articles</PackageId>
-        <TargetFramework>net6.0</TargetFramework>
-        <IsPackable>true</IsPackable>
-        <Title>API Project template</Title>
-        <Authors>Gary Woodfine</Authors>
-        <Description>Project template to create Adralis API endpoint project</Description>
-        <RepositoryType>git</RepositoryType>
-        <PackageTags>api project, api endpoints,</PackageTags>
-        <RepositoryUrl>https://github.com/threenine/api-template</RepositoryUrl>
-        <Copyright>Copyright © 2005 - 2021 Three Nine Consulting Limited</Copyright>
-        <PackageProjectUrl>https://threenine.co.uk</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/threenine/api-template/blob/master/LICENSE</PackageLicenseUrl>
-        <PackageIconUrl>http://static.threenine.co.uk/threenine_icon.png</PackageIconUrl>
-        <IncludeContentInPack>true</IncludeContentInPack>
-        <IncludeBuildOutput>false</IncludeBuildOutput>
-        <EnableDefaultContentItems>false</EnableDefaultContentItems>
-        <NoDefaultExcludes>true</NoDefaultExcludes>
-        <PackageReleaseNotes>Added CustomSchemaIds to Swagger end point definitions. Mediator Logging and Validation Behaviour pipelines implemented</PackageReleaseNotes>
-      <UserSecretsId>c9f90c78-2533-46c7-aa44-ef59b79a8591</UserSecretsId>
-      <RootNamespace>Geekiam.Posts.Service</RootNamespace>
-  </PropertyGroup>
-    <ItemGroup>
-        <Content Include="**\**" Exclude="**\bin\**;**\obj\**;**\.idea\**" />
-    </ItemGroup>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+ <PropertyGroup>
+     <TargetFramework>net6.0</TargetFramework>
+ </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Ardalis.ApiEndpoints" Version="4.0.1" />
         <PackageReference Include="AutoMapper" Version="11.0.1" />
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-        <PackageReference Include="FluentValidation" Version="11.0.1" />
-        <PackageReference Include="FluentValidation.AspNetCore" Version="11.0.1" />
-        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.1" />
-     
-        <PackageReference Include="Geekiam.Database" Version="0.1.25" />
+         <PackageReference Include="FluentValidation" Version="10.4.0" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.4.0" />
+        <PackageReference Include="Geekiam.Database" Version="0.1.27" />
         <PackageReference Include="MediatR" Version="10.0.1" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-        <PackageReference Include="Serilog" Version="2.11.0" />
+        <PackageReference Include="Serilog" Version="2.10.0" />
         <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
-        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.3.1" />
-        <PackageReference Include="Threenine.ApiResponse" Version="1.0.5" />
-        <PackageReference Include="Threenine.Data" Version="2.1.16" />
-        
-    </ItemGroup>
-    <ItemGroup>
-        <EmbeddedResource Update="Resources\ExceptionTitle.resx">
-            <Generator>ResXFileCodeGenerator</Generator>
-            <LastGenOutput>ExceptionTitle.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-        <EmbeddedResource Update="Resources\ExceptionMessage.resx">
-            <Generator>ResXFileCodeGenerator</Generator>
-            <LastGenOutput>ExceptionMessage.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Update="Resources\ExceptionTitle.Designer.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>ExceptionTitle.resx</DependentUpon>
-        </Compile>
-        <Compile Update="Resources\ExceptionMessage.Designer.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>ExceptionMessage.resx</DependentUpon>
-        </Compile>
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Activities\Categories\Commands" />
-      <Folder Include="Activities\Categories\Queries" />
-      <Folder Include="Activities\Tags\Commands" />
-      <Folder Include="Activities\Tags\Queries" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.3.0" />
+        <PackageReference Include="Threenine.ApiResponse" Version="1.0.20" />
+        <PackageReference Include="Threenine.Data" Version="3.2.2" />
+        <PackageReference Include="Threenine.DataService" Version="0.1.6" />
     </ItemGroup>
 </Project> 
