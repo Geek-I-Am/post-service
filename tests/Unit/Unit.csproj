@@ -30,7 +30,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\api\Boleyn.csproj" />
+      <ProjectReference Include="..\..\src\api\Api.csproj" />
     </ItemGroup>
 
     <ItemGroup>

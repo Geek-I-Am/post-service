@@ -17,12 +17,12 @@ public class Program
             .CreateBootstrapLogger();
         try
         {
-            Log.Information("Boleyn Application is starting");
+            Log.Information("Api Application is starting");
             CreateHostBuilder(args).Build().Run();
         }
         catch (Exception ex)
         {
-            Log.Fatal(ex, "Boleyn application failed to start");
+            Log.Fatal(ex, "Api application failed to start");
         }
         finally
         {
