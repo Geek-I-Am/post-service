@@ -22,7 +22,7 @@ jobs:
       shell : bash
       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
-        DOCKER_TOKEN: ${{ Secrets.DOCKER_TOKEN  }}
+        DOCKER_TOKEN: ${{ Secrets.DOCKER_TOKEN }}
       run: |
         dotnet new tool-manifest
         dotnet tool install Cake.Tool
