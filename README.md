@@ -9,7 +9,7 @@ In the root of the project directory there is a docker compose file which enable
 This database is just used to enable creating migrations and testing them, 
 
 
-
+TET
 #### Install EF Core tool
 
 ```shell
