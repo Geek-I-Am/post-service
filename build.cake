@@ -95,16 +95,28 @@ Task("Publish")
 
 });
 
+Task("DockerLogin")
+.IsDependentOn("Publish")
+.Does(() => {   
+ 
+   DockerLogin(new DockerRegistryLoginSettings{Password=EnvironmentVariable("DOCKER_TOKEN"),Username=EnvironmentVariable("DOCKER_USER")});   
+});
+
 Task("Docker-Build")
- .IsDependentOn("Publish")
+ .IsDependentOn("DockerLogin")
 .Does(() => {
-    string [] tags = new string[]  { $"geekiam/posts:{ version}"};
+    string [] tags = new string[]  { $"threenine/posts:{ version}"};
       Information("Building : Actors Docker Image");
     var settings = new DockerImageBuildSettings { Tag=tags};
     DockerBuild(settings, "./");
 });
 
-
+Task("Docker-Push")
+ .IsDependentOn("Docker-Build")
+.Does(() => {
+  
+    DockerPush( $"threenine/posts:{ version}");
+});
 
 //////////////////////////////////////////////////////////////////////
 // EXECUTION
@@ -117,6 +129,8 @@ Task("Default")
        .IsDependentOn("Build")
        .IsDependentOn("Test")
        .IsDependentOn("Publish")
-       .IsDependentOn("Docker-Build");
+       .IsDependentOn("DockerLogin")
+       .IsDependentOn("Docker-Build")
+       .IsDependentOn("Docker-Push");
 
 RunTarget(target);
