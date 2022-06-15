@@ -6,5 +6,6 @@
         <ImplicitUsings>true</ImplicitUsings>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
+        <RootNamespace>Kingsbridge</RootNamespace>
     </PropertyGroup>
 </Project>
