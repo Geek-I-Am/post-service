@@ -22,7 +22,7 @@ Task("Restore")
     var settings =  new DotNetRestoreSettings
      {
         Verbosity = DotNetVerbosity.Minimal,
-        Sources = new [] { "https://api.nuget.org/v3/index.json" }
+        Sources = new [] { "https://api.nuget.org/v3/index.json", "https://nuget.pkg.github.com/Geek-I-Am/index.json" }
      };
     foreach(var project in projects )
     {
