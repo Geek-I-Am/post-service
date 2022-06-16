@@ -19,11 +19,15 @@ Task("Restore")
     .Does(() => {
     
     var projects = GetFiles("./**/**/*.csproj");
- 
+    var settings =  new DotNetRestoreSettings
+     {
+        Verbosity = DotNetVerbosity.Minimal,
+        Sources = new [] { "https://api.nuget.org/v3/index.json" }
+     };
     foreach(var project in projects )
     {
       Information($"Restoring { project.ToString()}");
-      DotNetRestore(project.ToString());
+      DotNetRestore(project.ToString(), settings);
     }
 
 });
